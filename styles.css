@@ -216,6 +216,12 @@ nav {
 	animation: slideInRight 0.8s ease 0.4s both;
 }
 
+@media (max-width: 768px) {
+	.home-image.portrait {
+		display: none;
+	}
+}
+
 .home-image.landscape {
 	width: 100%;
 	height: 250px;
@@ -372,6 +378,16 @@ nav {
 	grid-template-columns: 1fr 1fr;
 	gap: 4rem;
 	align-items: center;
+}
+
+@media (max-width: 768px) {
+	.product-container {
+		grid-template-columns: 1fr;
+	}
+
+	.product-image {
+		order: -1; /* Makes sure image appears first if DOM order changes */
+	}
 }
 
 .product-image {
