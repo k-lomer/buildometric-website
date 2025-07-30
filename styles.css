@@ -89,18 +89,18 @@ nav {
 }
 
 .logo::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background-color: var(--primary-green);
-  transition: width 0.3s ease;
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 0;
+	height: 2px;
+	background-color: var(--primary-green);
+	transition: width 0.3s ease;
 }
 
 .logo:hover::after {
-  width: 100%;
+	width: 100%;
 }
 
 .nav-links {
@@ -122,6 +122,7 @@ nav {
 .nav-links a.active {
 	color: var(--primary-green);
 }
+
 .nav-links a.active {
 	font-weight: 700;
 }
@@ -195,6 +196,7 @@ nav {
 		opacity: 0;
 		transform: translateY(30px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0);
@@ -225,7 +227,7 @@ nav {
 .home-image.landscape {
 	width: 100%;
 	height: 250px;
-    margin-top: 3rem;
+	margin-top: 3rem;
 	animation: slideInLeft 0.8s ease 0.4s both;
 }
 
@@ -234,6 +236,7 @@ nav {
 		opacity: 0;
 		transform: translateX(50px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateX(0);
@@ -245,6 +248,7 @@ nav {
 		opacity: 0;
 		transform: translateX(-50px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateX(0);
@@ -284,9 +288,9 @@ nav {
 }
 
 .white-button:hover {
-	box-shadow: 
+	box-shadow:
 		0 15px 40px rgba(0, 0, 0, 0.3),
-		inset 0 0 0 2px var(--white);  
+		inset 0 0 0 2px var(--white);
 	background: var(--primary-green);
 	color: var(--white);
 }
@@ -386,7 +390,8 @@ nav {
 	}
 
 	.product-image {
-		order: -1; /* Makes sure image appears first if DOM order changes */
+		order: -1;
+		/* Makes sure image appears first if DOM order changes */
 	}
 }
 
@@ -426,22 +431,22 @@ nav {
 }
 
 .feature-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary-green), var(--light-purple));
-    border-radius: 12px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px;
-    box-sizing: border-box;
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(135deg, var(--primary-green), var(--light-purple));
+	border-radius: 12px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px;
+	box-sizing: border-box;
 }
 
 .feature-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 .feature-content h3 {
@@ -554,11 +559,11 @@ nav {
 }
 
 .instagram-link::after {
-    content: '📷';
-    font-size: 1.2rem;
-    font-weight: normal;
+	content: '📷';
+	font-size: 1.2rem;
+	font-weight: normal;
 	position: relative;
-    top: 0px;
+	top: 0px;
 	left: 0px;
 }
 
@@ -640,9 +645,9 @@ nav {
 }
 
 .submit-button:hover {
-	box-shadow: 
+	box-shadow:
 		0 15px 40px rgba(0, 0, 0, 0.3),
-		inset 0 0 0 2px var(--white);  
+		inset 0 0 0 2px var(--white);
 	background: var(--primary-green);
 	color: var(--white);
 }
@@ -741,48 +746,48 @@ footer {
 		padding: 2rem;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	}
-	
+
 	.nav-links.active {
 		display: flex;
 	}
-	
+
 	.mobile-menu {
 		display: flex;
 	}
-	
+
 	.home-container {
 		grid-template-columns: 1fr;
 		text-align: center;
 	}
-	
+
 	.home-images {
 		height: 300px;
 		margin-top: 2rem;
 	}
-	
+
 	.home-image.portrait {
 		width: 180px;
 		height: 250px;
 	}
-	
+
 	.home-image.landscape {
 		width: 250px;
 		height: 180px;
 	}
-	
+
 	.about-container {
 		grid-template-columns: 1fr;
 		text-align: center;
 	}
-	
+
 	.team-grid {
 		grid-template-columns: 1fr;
 	}
-	
+
 	h1 {
 		font-size: 2.5rem;
 	}
-	
+
 	h2 {
 		font-size: 2rem;
 	}
