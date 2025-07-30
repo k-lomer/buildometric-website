@@ -339,6 +339,14 @@ nav {
 	color: var(--dark-gray);
 }
 
+.stats-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 2em;
+}
+
 /* About Section */
 .about-section {
 	background: linear-gradient(135deg, var(--light-purple) 10%, var(--light-purple) 60%, var(--primary-green) 100%);
