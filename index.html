@@ -206,7 +206,6 @@
             <h2>Get Started Today</h2>
             <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="cf03766a-306a-40be-8f6d-f9691f21107b">
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -221,12 +220,12 @@
                         placeholder="Tell us about your project and how we can help..." required></textarea>
                 </div>
                 <div>
+                    <!-- Honeytrap to stop bots -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <button type="submit" class="white-button">Send Message</button>
                 </div>
             </form>
-            <div class="contact-thankyou">
-                Thank you! We'll be in touch soon.
-            </div>
+            <div class="contact-result">.</div>
         </div>
     </section>
 
@@ -311,18 +310,62 @@
         });
 
         // Form submission
+
+        // Function to disable/enable form elements
+        function setFormDisabled(form, disabled) {
+            Array.from(form.elements).forEach(el => {
+                el.disabled = disabled;
+            });
+        }
+
         const contactForm = document.querySelector('.contact-form');
         const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const thankYouMsg = document.getElementsByClassName('contact-thankyou')[0];
+        const contactResult = document.getElementsByClassName('contact-result')[0];
 
-        contactForm.addEventListener('submit', (e) => {
+        const successMessage = "Thank you! We'll be in touch soon.";
+        const errorMessage = "There was an error. Please try again.";
+
+        // Handle form submission errors
+        function handleSubmissionError(submitBtn, contactResult, contactForm) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send Message";
+            contactResult.textContent = errorMessage;
+            contactResult.style.visibility = "visible";
+            setFormDisabled(contactForm, false);
+        }
+
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            thankYouMsg.style.visibility = "visible";
-            submitBtn.textContent = "Message Sent";
+
+            contactResult.style.visibility = "hidden";
             submitBtn.disabled = true;
-            Array.from(contactForm.elements).forEach(el => {
-                el.disabled = true;
-            });
+            submitBtn.textContent = "Sending...";
+            setFormDisabled(contactForm, true);
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    submitBtn.textContent = "Message Sent";
+
+                    contactResult.textContent = successMessage;
+                    contactResult.style.visibility = "visible";
+                } else {
+                    console.error(response);
+                    handleSubmissionError(submitBtn, contactResult, contactForm);
+                }
+            } catch (error) {
+                console.error(error);
+                handleSubmissionError(submitBtn, contactResult, contactForm);
+            }
         });
 
         // Intersection Observer for animations
