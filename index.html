@@ -206,6 +206,8 @@
             <h2>Get Started Today</h2>
             <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="cf03766a-306a-40be-8f6d-f9691f21107b">
+                <!-- Honeytrap to stop bots -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -220,8 +222,6 @@
                         placeholder="Tell us about your project and how we can help..." required></textarea>
                 </div>
                 <div>
-                    <!-- Honeytrap to stop bots -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <button type="submit" class="white-button">Send Message</button>
                 </div>
             </form>
@@ -340,13 +340,17 @@
             contactResult.style.visibility = "hidden";
             submitBtn.disabled = true;
             submitBtn.textContent = "Sending...";
-            setFormDisabled(contactForm, true);
+
             const formData = new FormData(contactForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            setFormDisabled(contactForm, true);
 
             try {
                 const response = await fetch(contactForm.action, {
                     method: "POST",
-                    body: formData,
+                    body: json,
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
