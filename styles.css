@@ -295,6 +295,14 @@ nav {
 	color: var(--white);
 }
 
+.white-button:disabled {
+	background: var(--light-gray);
+	color: var(--dark-gray);
+	cursor: not-allowed;
+	box-shadow: none;
+	opacity: 0.7;
+}
+
 /* Info Section */
 .info-section {
 	background: var(--light-gray);
@@ -638,26 +646,12 @@ nav {
 	min-height: 150px;
 }
 
-.submit-button {
-	padding: 1rem 3rem;
-	background: var(--primary-green);
-	color: var(--white);
-	border: none;
-	border-radius: 50px;
-	font-size: 1.1rem;
+.contact-thankyou {
+	visibility: hidden;
+	margin-top: 1em;
+	color: var(--primary-green);
 	font-weight: 600;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	align-self: center;
-	margin-top: 1rem;
-}
-
-.submit-button:hover {
-	box-shadow:
-		0 15px 40px rgba(0, 0, 0, 0.3),
-		inset 0 0 0 2px var(--white);
-	background: var(--primary-green);
-	color: var(--white);
+	text-align: center;
 }
 
 /* Footer */
