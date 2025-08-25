@@ -320,14 +320,14 @@ nav {
 	text-align: center;
 }
 
-.stats-grid {
+.info-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 3rem;
 	margin-top: 3rem;
 }
 
-.stat-card {
+.info-card {
 	background: var(--white);
 	padding: 2rem;
 	border-radius: 20px;
@@ -335,29 +335,21 @@ nav {
 	transition: all 0.3s ease;
 }
 
-.stat-card:hover {
+.info-card:hover {
 	transform: translateY(-10px);
 	box-shadow: 0 10px 40px var(--primary-green);
 }
 
-.stat-number {
+.info-header {
 	font-size: 3rem;
 	font-weight: 700;
 	color: var(--primary-green);
 	margin-bottom: 0.5rem;
 }
 
-.stat-label {
+.info-text {
 	font-size: 1.1rem;
 	color: var(--dark-gray);
-}
-
-.stats-footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	margin-top: 5rem;
 }
 
 /* About Section */
@@ -390,13 +382,13 @@ nav {
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
-/* Product Section */
-.product-section {
+/* Solution Section */
+.solution-section {
 	background: var(--light-gray);
 	padding: 5rem 2rem;
 }
 
-.product-container {
+.solution-container {
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
@@ -406,17 +398,17 @@ nav {
 }
 
 @media (max-width: 768px) {
-	.product-container {
+	.solution-container {
 		grid-template-columns: 1fr;
 	}
 
-	.product-image {
+	.solution-image {
 		order: -1;
 		/* Makes sure image appears first if DOM order changes */
 	}
 }
 
-.product-image {
+.solution-image {
 	width: 100%;
 	background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
 	border-radius: 35px;
