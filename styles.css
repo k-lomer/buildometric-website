@@ -199,9 +199,21 @@ nav {
 	padding: 8rem 2rem 4rem;
 	min-height: 90vh;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	position: relative;
 	overflow: hidden;
+}
+
+.home-header {
+	max-width: 1200px;
+	text-align: left;
+	width: 100%;
+}
+
+.home-header h1 {
+	color: var(--white);
+	animation: fadeInUp 0.8s ease;
 }
 
 
@@ -214,14 +226,12 @@ nav {
 	align-items: start;
 }
 
-.home-content h1 {
-	color: var(--white);
-	animation: fadeInUp 0.8s ease;
+.home-content {
+	margin-top: 4rem;
 }
 
 .home-content p {
 	font-size: 1.2rem;
-	margin-bottom: 2rem;
 	opacity: 0.9;
 	animation: fadeInUp 0.8s ease 0.2s both;
 }
@@ -245,6 +255,7 @@ nav {
 	overflow: hidden;
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 	transition: transform 0.3s ease;
+	object-fit: cover;
 }
 
 .home-image.portrait {
@@ -253,9 +264,34 @@ nav {
 	animation: slideInRight 0.8s ease 0.4s both;
 }
 
+.home-image.banner {
+	display: none;
+}
+
 @media (max-width: 768px) {
 	.home-image.portrait {
 		display: none;
+	}
+
+	.home-image.landscape {
+		display: none;
+	}
+
+	.home-image.banner {
+		display: block;
+		width: 100vw;
+		margin-top: 2rem;
+		border-radius: 0;
+		height: 180px;
+		object-fit: cover;
+	}
+
+	.home {
+		padding-bottom: 0;
+	}
+
+	.home-content {
+		margin-top: 1rem;
 	}
 }
 
@@ -294,7 +330,7 @@ nav {
 .register-section {
 	background: linear-gradient(45deg, var(--primary-green) 20%, var(--light-purple) 80%);
 	color: var(--white);
-	padding: 4rem 2rem;
+	padding: 2rem 1rem;
 	text-align: center;
 }
 
@@ -311,7 +347,7 @@ nav {
 /* Info Section */
 .info-section {
 	background: var(--light-gray);
-	padding: 5rem 2rem;
+	padding: 2rem 2rem;
 }
 
 .info-container {
@@ -324,7 +360,7 @@ nav {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 3rem;
-	margin-top: 3rem;
+	margin-top: 1rem;
 }
 
 .info-card {
@@ -333,6 +369,9 @@ nav {
 	border-radius: 20px;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .info-card:hover {
@@ -341,7 +380,7 @@ nav {
 }
 
 .info-header {
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: 700;
 	color: var(--primary-green);
 	margin-bottom: 0.5rem;
@@ -364,7 +403,7 @@ nav {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 4rem;
-	align-items: center;
+	align-items: end;
 }
 
 .about-content p {
@@ -392,23 +431,39 @@ nav {
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 4rem;
+	grid-template-columns: 1fr;
 	align-items: center;
 }
 
+.solution-container>h2 {
+	grid-column: 1 / -1;
+}
+
+.solution-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4rem;
+	align-items: start;
+}
+
+.solution-dashboard p {
+	font-size: 1.1rem;
+	margin-bottom: 1rem;
+}
+
+
 @media (max-width: 768px) {
-	.solution-container {
+	.solution-content {
 		grid-template-columns: 1fr;
 	}
 
 	.solution-image {
 		order: -1;
-		/* Makes sure image appears first if DOM order changes */
 	}
 }
 
 .solution-image {
+	margin-top: 3rem;
 	width: 100%;
 	background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
 	border-radius: 35px;
@@ -420,7 +475,7 @@ nav {
 	justify-content: center;
 }
 
-.product-features {
+.solution-features {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -430,7 +485,7 @@ nav {
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
-	padding: 1.5rem;
+	padding: 0.5rem;
 	background: var(--white);
 	border-radius: 15px;
 	transition: all 0.3s ease;
@@ -532,14 +587,14 @@ nav {
 }
 
 .member-role {
-	color: var(--primary-dark);
+	color: var(--dark-gray);
 	margin-bottom: 1rem;
 }
 
 .member-bio {
 	font-size: 0.9rem;
 	line-height: 1.6;
-	color: var(--primary-dark);
+	color: var(--dark-gray);
 	margin-bottom: 1rem;
 }
 
@@ -575,9 +630,7 @@ nav {
 	content: '📷';
 	font-size: 1.2rem;
 	font-weight: normal;
-	position: relative;
-	top: 0px;
-	left: 0px;
+	align-self: center;
 }
 
 /* Contact Section */
