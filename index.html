@@ -23,11 +23,11 @@
         <div class="nav-container">
             <a href="" class="logo">Build<span class="highlight">o</span>metric</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#solution" class="nav-link">Solution</a></li>
-                <li><a href="#team" class="nav-link">Team</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="/#home" class="nav-link">Home</a></li>
+                <li><a href="/#about" class="nav-link">About</a></li>
+                <li><a href="/#solution" class="nav-link">Solution</a></li>
+                <li><a href="/#team" class="nav-link">Team</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="mobile-menu" id="mobileMenu" role="button" aria-label="Toggle navigation">
                 <span></span>
@@ -262,7 +262,7 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="">Home</a></li>
+                    <li><a href="/#home">Home</a></li>
                     <li><a href="/#about">About Us</a></li>
                     <li><a href="/#team">Our Team</a></li>
                     <li><a href="/#contact">Contact</a></li>
@@ -304,7 +304,7 @@
         const sections = document.querySelectorAll('section');
         const navItems = document.querySelectorAll('.nav-link');
 
-        window.addEventListener('scroll', () => {
+        function updateActiveSection() {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -317,11 +317,17 @@
 
             navItems.forEach(item => {
                 item.classList.remove('active');
-                if (item.getAttribute('href').slice(1) === activeGroup) {
+                if (item.getAttribute('href').slice(2) === activeGroup) {
                     item.classList.add('active');
                 }
             });
-        });
+        }
+
+        // Run on scroll
+        window.addEventListener('scroll', updateActiveSection);
+
+        // Run once when DOM is ready
+        window.addEventListener('DOMContentLoaded', updateActiveSection);
 
         // Smooth scroll for navigation links
         navItems.forEach(item => {
