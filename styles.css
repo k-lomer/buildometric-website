@@ -197,7 +197,6 @@ nav {
 	background: var(--primary-dark);
 	color: var(--white);
 	padding: 8rem 2rem 4rem;
-	min-height: 90vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -221,7 +220,7 @@ nav {
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 2fr 1fr;
 	gap: 4rem;
 	align-items: start;
 }
@@ -250,56 +249,35 @@ nav {
 
 .home-image {
 	position: static;
-	background: var(--light-gray);
+	background: rgba(0, 0, 0, 0);
 	border-radius: 20px;
 	overflow: hidden;
-	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 	transition: transform 0.3s ease;
 	object-fit: cover;
 }
 
 .home-image.portrait {
-	width: 100%;
-	height: 500px;
+	width: 300px;
+	height: 220px;
 	animation: slideInRight 0.8s ease 0.4s both;
 }
 
-.home-image.banner {
-	display: none;
-}
-
 @media (max-width: 768px) {
-	.home-image.portrait {
-		display: none;
-	}
-
-	.home-image.landscape {
-		display: none;
-	}
-
-	.home-image.banner {
-		display: block;
-		width: 100vw;
-		margin-top: 2rem;
-		border-radius: 0;
-		height: 180px;
-		object-fit: cover;
-	}
-
-	.home {
-		padding-bottom: 0;
-	}
-
 	.home-content {
 		margin-top: 1rem;
 	}
-}
+	.home-container {
+		gap: 2rem;
+	}
+	.home-header h1 {
+		margin-bottom: 2rem;
 
-.home-image.landscape {
-	width: 100%;
-	height: 250px;
-	margin-top: 3rem;
-	animation: slideInLeft 0.8s ease 0.4s both;
+	}
+	.home-image.portrait {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 @keyframes slideInRight {
@@ -347,7 +325,7 @@ nav {
 /* Info Section */
 .info-section {
 	background: var(--light-gray);
-	padding: 4rem 2rem;
+	padding: 2rem 2rem;
 }
 
 .info-container {
@@ -360,7 +338,6 @@ nav {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 3rem;
-	margin-top: 1rem;
 }
 
 .info-card {
@@ -465,11 +442,9 @@ nav {
 .solution-image {
 	margin-top: 3rem;
 	width: 100%;
-	background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
-	border-radius: 35px;
+	border-radius: 24px;
 	position: relative;
 	overflow: hidden;
-	box-shadow: 0 30px 80px rgba(0, 61, 61, 0.3);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -878,21 +853,6 @@ footer {
 		text-align: center;
 	}
 
-	.home-images {
-		height: 300px;
-		margin-top: 2rem;
-	}
-
-	.home-image.portrait {
-		width: 180px;
-		height: 250px;
-	}
-
-	.home-image.landscape {
-		width: 250px;
-		height: 180px;
-	}
-
 	.about-container {
 		grid-template-columns: 1fr;
 		text-align: center;
@@ -908,6 +868,10 @@ footer {
 
 	h2 {
 		font-size: 2rem;
+	}
+
+	.footer-container {
+		grid-template-columns: 1fr;
 	}
 }
 
