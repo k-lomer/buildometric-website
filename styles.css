@@ -304,28 +304,10 @@ nav {
 	}
 }
 
-/* Register Section */
-.register-section {
-	background: linear-gradient(45deg, var(--primary-green) 20%, var(--light-purple) 80%);
-	color: var(--white);
-	padding: 2rem 1rem;
-	text-align: center;
-}
-
-.register-content {
-	max-width: 800px;
-	margin: 0 auto;
-}
-
-.register-content h3 {
-	font-size: 2rem;
-	margin-bottom: 1rem;
-}
-
 /* Info Section */
 .info-section {
 	background: var(--light-gray);
-	padding: 2rem 2rem;
+	padding: 5rem 2rem;
 }
 
 .info-container {
@@ -451,16 +433,15 @@ nav {
 }
 
 .solution-features {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
+	display: grid;
+	grid-auto-rows: 1fr; 
+	gap: 1rem;
 }
 
 .feature-item {
 	display: flex;
-	align-items: center;
-	gap: 1.5rem;
-	padding: 0.5rem;
+	gap: 0rem;
+	padding: 0.5rem 0;
 	background: var(--white);
 	border-radius: 15px;
 	transition: all 0.3s ease;
@@ -484,6 +465,7 @@ nav {
 	justify-content: center;
 	padding: 6px;
 	box-sizing: border-box;
+	margin: auto 1rem;
 }
 
 .feature-icon img {
@@ -502,7 +484,7 @@ nav {
 .feature-content p {
 	color: var(--dark-gray);
 	line-height: 1.6;
-	margin: 0;
+	margin: 0 1rem 0 0;
 }
 
 /* Team Section */
@@ -823,6 +805,11 @@ footer {
 
 .privacy .address {
 	padding-left: 1rem;
+}
+
+.privacy-image {
+	width: 100%;
+	margin-top: 4rem;
 }
 
 
