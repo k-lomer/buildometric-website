@@ -230,8 +230,7 @@ nav {
 }
 
 .home-content p {
-	font-size: 1.2rem;
-	opacity: 0.9;
+	font-size: 1.5rem;
 	animation: fadeInUp 0.8s ease 0.2s both;
 }
 
