@@ -213,7 +213,7 @@ nav {
 .home-header h1 {
 	color: var(--white);
 	animation: fadeInUp 0.8s ease;
-	font-size: 8.5rem;
+	font-size: 6.8rem;
 }
 
 
@@ -271,7 +271,7 @@ nav {
 	}
 	.home-header h1 {
 		margin-bottom: 2rem;
-		font-size: 6.5rem;
+		font-size: 6rem;
 
 
 	}
